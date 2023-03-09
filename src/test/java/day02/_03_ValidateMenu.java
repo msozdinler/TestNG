@@ -2,6 +2,7 @@ package day02;
 
 import Utilities.DriverClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class _03_ValidateMenu extends DriverClass {
      * Validate that you see all menu options
      * */
 
-    @Test
+    @Test(groups = "SmokeTest")
     void ValidateMenuTest(){
         List<WebElement> menuList = driver.findElements(By.xpath("//ul[@class=\"nav navbar-nav\"]/li"));
         List<String> expectedMenuList = new ArrayList<>(List.of("Desktops", "Laptops & Notebooks", "Components", "Tablets", "Software", "Phones & PDAs", "Cameras", "MP3 Players"));
